@@ -11,7 +11,7 @@ dotenv.config({
 const app = express();
 
 app.use(cors({
-  origin:"https://checkflow-client-s1fd.vercel.app" ,
+  origin:"https://check-flow-plum.vercel.app/" ,
   methods:['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders:['Content-Type', 'Authorization', 'X-Requested-With', 'Accept', 'Origin'],
   exposedHeaders:['Content-Type', 'Authorization', 'X-Requested-With', 'Accept'],
