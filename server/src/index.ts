@@ -8,15 +8,13 @@ dotenv.config();
 
 const app = express();
 
-// Allowed origins - production frontend and localhost (development)
 const allowedOrigins = [
-  'https://checkflow-client-njq1.vercel.app',  // Your deployed frontend URL
-  'http://localhost:3000'                      // Local development URL
+  'https://checkflow-client-s1fd.vercel.app', 
+  'http://localhost:3000'                    
 ];
 
 app.use(cors({
   origin: function(origin, callback) {
-    // allow requests with no origin like Postman or curl
     if (!origin) return callback(null, true);
     if (allowedOrigins.indexOf(origin) === -1) {
       const msg = `The CORS policy for this site does not allow access from the specified Origin: ${origin}`;
@@ -26,7 +24,7 @@ app.use(cors({
   },
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
-  credentials: true,  // if you need to send cookies or authorization headers
+  credentials: true,  
 }));
 
 app.use(express.json());
